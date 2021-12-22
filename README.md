@@ -25,6 +25,14 @@ This repo represents a minimal setup for a machine learning project that leverag
 
 ## Notebooks
 
+### Connect to jupyter server using VS Code
+- After running docker-compose, open separate terminal and run
+
+        docker exec -it ml jupyter notebook --ip 0.0.0.0 --port 8888 --allow-root
+
+- Copy server URL with token (e.g. `http://127.0.0.1:8888/?token={some_token}`)
+- Follow instructions [Connect to a remote Jupyter server](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server)
+
 ### Execute Jupyter notebook in docker and save output
 
         papermill analysis.ipynb analysis-output.ipynb -k python

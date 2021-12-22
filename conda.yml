@@ -5,6 +5,7 @@ channels:
 dependencies:
   - ipykernel=6.4.*
   - ipython=7.29.*
+  - jupyterlab=3.2.*
   - matplotlib=3.5.*
   - pandas=1.2.*
   - papermill=2.3.*
