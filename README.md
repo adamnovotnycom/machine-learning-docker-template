@@ -5,6 +5,21 @@ This repo represents a minimal setup for a machine learning project that leverag
 - Python 3.6+
 - [Papermill](https://github.com/nteract/papermill) (executes notebooks)
 
+
+## Directory
+
+        ├── README.md             
+        ├── ml_docker_template    <- Placeholder package name; replace after cloning template
+        │   ├── artifacts         <- Data or models generated during model training
+        │   │   └── .gitkeep
+        │   ├── data.py           <- Sources raw data from databases, APIs, csvs
+        │   ├── deploy.py         <- Deploys trained model to production
+        │   ├── feature_eng.py    <- Cleans raw data and generates a single training dataset
+        │   ├── model_train.py    <- Trains a model
+        │   ├── model_score.py    <- Sample queries to verify that model returns valid responses
+        ├── notebooks             <- Non-production Jupyter notebooks: analysis, exploration, viz
+        ├── test                  <- Each code merge to main branch must pass these tests
+
 ## Docker commands
 
 ### Run container
