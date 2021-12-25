@@ -18,7 +18,7 @@ This repo represents a minimal setup for a machine learning project that leverag
         │   ├── model_train.py    <- Trains a model
         │   ├── model_score.py    <- Queries model using sampled data to ensure valid responses
         ├── notebooks             <- Non-production Jupyter notebooks: analysis, exploration, viz
-        ├── test                  <- Each code merge to main branch must pass these tests
+        ├── tests                 <- Each code merge to main branch must pass these tests
         ├── conda.yml             <- All codebase dependencies are managed by Miniconda
         ├── Dockerfile            <- Miniconda base image
 
