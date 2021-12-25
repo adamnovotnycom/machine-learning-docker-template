@@ -12,13 +12,15 @@ This repo represents a minimal setup for a machine learning project that leverag
         ├── ml_docker_template    <- Placeholder package name; replace after cloning template
         │   ├── artifacts         <- Data or models generated during model training
         │   │   └── .gitkeep
-        │   ├── data.py           <- Sources raw data from databases, APIs, csvs
+        │   ├── data.py           <- Sources raw data from databases, APIs, CSVs
         │   ├── deploy.py         <- Deploys trained model to production
         │   ├── feature_eng.py    <- Cleans raw data and generates a single training dataset
         │   ├── model_train.py    <- Trains a model
-        │   ├── model_score.py    <- Sample queries to verify that model returns valid responses
+        │   ├── model_score.py    <- Queries model using sampled data to ensure valid responses
         ├── notebooks             <- Non-production Jupyter notebooks: analysis, exploration, viz
         ├── test                  <- Each code merge to main branch must pass these tests
+        ├── conda.yml             <- All codebase dependencies are managed by Miniconda
+        ├── Dockerfile            <- Miniconda base image
 
 ## Docker commands
 
