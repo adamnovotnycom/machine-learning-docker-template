@@ -38,7 +38,7 @@ This repo represents a minimal setup for a machine learning project that leverag
 
 ## Commit runboook
 
-        black machine_learning_docker_template
+        black ml_docker_template
 
 ## Notebooks
 
