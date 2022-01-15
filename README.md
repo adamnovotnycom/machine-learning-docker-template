@@ -1,32 +1,36 @@
 # Machine Learning Docker Template
 
-This repo represents a minimal setup for a machine learning project that leverages:
-- Docker
-- Python 3.6+
-- [Papermill](https://github.com/nteract/papermill) (executes notebooks)
+This repo represents a minimal suggested setup for a machine learning project.
 
 
 ## Directory
 
-        ├── README.md             
-        ├── ml_docker_template    <- Placeholder package name; replace after cloning template
-        │   ├── artifacts         <- Data or models generated during model training
+        ├── README.md 
+        ├── docs                        <- Documentation and artifacts (images)
+        ├── ml_docker_template          <- Placeholder package name; replace after cloning template
+        │   ├── artifacts               <- Data or models generated during model process
         │   │   └── .gitkeep
-        │   ├── data.py           <- Sources raw data from databases, APIs, CSVs
-        │   ├── deploy.py         <- Deploys trained model to production
-        │   ├── feature_eng.py    <- Cleans raw data and generates a single training dataset
-        │   ├── model_train.py    <- Trains a model
-        │   ├── model_score.py    <- Queries model using sampled data to ensure valid responses
-        ├── notebooks             <- Non-production Jupyter notebooks: analysis, exploration, viz
-        ├── tests                 <- Each code merge to main branch must pass these tests
-        ├── conda.yml             <- All codebase dependencies are managed by Miniconda
-        ├── Dockerfile            <- Miniconda base image
+        │   ├── data_extraction.py      <- Sources raw data from databases, APIs, CSVs
+        │   ├── data_preparation.py     <- Cleans raw data and generates train and test sets
+        │   ├── model_training.py       
+        │   ├── model_evaluation.py     <- Model is evaluated on a holdout test set
+        │   ├── model_validation.py     <- Validate model and push to registry
+        ├── notebooks                   <- Non-production Jupyter notebooks: analysis, exploration, viz
+        ├── tests                       <- Each code merge to main branch must pass these tests
+        ├── conda.yml                   <- All codebase dependencies are managed by Miniconda
+        ├── Dockerfile                  <- Miniconda base image
+
+
+## Architecture
+Source: [Google MLOps](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning#mlops_level_2_cicd_pipeline_automation)
+![image](./docs/images/20220115104809.png)
+
 
 ## Docker commands
 
 ### Run container
 
-        docker-compose -f docker-compose.yml up
+        docker-compose -f docker-compose.yml up -d
 
 ### Stop and delete container
 
@@ -38,7 +42,7 @@ This repo represents a minimal setup for a machine learning project that leverag
 
 ## Commit runboook
 
-        black ml_docker_template
+        docker exec -it ml bash -c 'black ml_docker_template'
 
 ## Notebooks
 
@@ -55,5 +59,6 @@ This repo represents a minimal setup for a machine learning project that leverag
         papermill analysis.ipynb analysis-output.ipynb -k python
 
 ## Credits
-- [Papermill](https://github.com/nteract/papermill)
 - [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science)
+- [Papermill](https://github.com/nteract/papermill)
+- [Google MLOps](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)
